@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Magazine Hashtag</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reset.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -24,8 +25,8 @@
           <i class="fa-solid fa-circle-xmark"></i>
         </button>
       </div>
-      <div id="produtos-carrinho">
-        <!-- aqui será inserido carrinho de forma dinamica -->
+      <div id="produtos-carrinho" class="h-3/5 overflow-y-auto flex flex-col gap-2">
+        <!-- aqui será inserido carrinho de forma dinâmica -->
       </div>
       <p id="preco-total">$200</p>
       <button class="bg-slate-200 text-slate-900 p-1">Finalizar Compra</button>
@@ -48,8 +49,8 @@
     <main>
       <section
         id="container-produto"
-        class="flex flex-wrap justify-center p-10 gap-10"
-      ></section>
+        class="flex flex-wrap justify-center p-10 gap-10 font-['Roboto']"
+      ><!-- aqui é inserido os cards de forma dinâmica --></section>
     </main>
 
     <script type="module" src="main.js"></script>

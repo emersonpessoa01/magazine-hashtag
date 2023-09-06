@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;800&family=Roboto:wght@100;300;400;500&display=swap");
+
+:root {
+  --azul-claro: #84c4f8;
+  --azul-escuro:#090f20;
+  --azul-hover:#090f20ca;
+
+  /* social icons */
+  --blue-face: #1349c6;
+  --blue-twitter: #28a0d5;
+  --red-youtube: #e31917;
+  --linkedin: #0e76a8;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    /* border: none; */
+    text-decoration: none;
+    font-family: "Roboto", "Poppins" sans-serif !important;
+    box-sizing: border-box;
+  }
+  html {
+    overflow-x: hidden;
+    scroll-padding-top: 6.5rem;
+    scroll-behavior: smooth;
+  }
+  html::-webkit-scrollbar {
+    width: 1rem;
+    height: 0.25rem;
+  }
+  html::-webkit-scrollbar-track {
+    /* background: transparent; */
+    background: inset 0 0 5px #a5aaad;
+  }
+  html::-webkit-scrollbar-thumb {
+    background: var(--azul-hover);
+    border-radius: 5rem;
+  }
+  html::-webkit-scrollbar-thumb:hover {
+    background: #696d78;
+    cursor:pointer;
+  }
+
+  /* scrollbar do carrinho */
+  #produtos-carrinho::-webkit-scrollbar {
+    width: .8rem;
+    height: 0.25rem;
+  }
+  #produtos-carrinho::-webkit-scrollbar-track {
+    /* background: transparent; */
+    background: inset 0 0 5px #a5aaad;
+  }
+  #produtos-carrinho::-webkit-scrollbar-thumb {
+    background: #a5aaad;
+    border-radius: 1rem;
+  }
+  #produtos-carrinho::-webkit-scrollbar-thumb:hover {
+    background: #696d78;
+    cursor:pointer;
+  }
