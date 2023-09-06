@@ -20,12 +20,9 @@ export function inicializarCarrinho() {
   botaoAbrirCarrinho.addEventListener("click", abrirCarrinho);
 }
 
-function removerDoCarrinho(idProdutorial){
-  delete idsProdutoCarrinhoComQuantidade[idProdutorial];
-}
-
-function renderizarProdutosCarrinho(){
-
+function removerDoCarrinho(idProduto) {
+  delete idsProdutoCarrinhoComQuantidade[idProduto];
+  renderizarProdutosCarrinho();
 }
 
 function incrementarQuantidadeProduto(idProduto) {
@@ -33,6 +30,10 @@ function incrementarQuantidadeProduto(idProduto) {
   atualizarInformacaoQuantidade(idProduto);
 }
 function decrementarQuantidadeProduto(idProduto) {
+  if (idsProdutoCarrinhoComQuantidade[idProduto] === 1) {
+    removerDoCarrinho(idProduto);
+    return;
+  }
   idsProdutoCarrinhoComQuantidade[idProduto]--;
   atualizarInformacaoQuantidade(idProduto);
 }
@@ -52,7 +53,7 @@ function desenharProdutoNoCarrinho(idProduto) {
     "p-1",
     "relative",
   ];
-  for(const articleClass of articleClasses){
+  for (const articleClass of articleClasses) {
     elementoArticle.classList.add(articleClass);
   }
 
@@ -60,7 +61,7 @@ function desenharProdutoNoCarrinho(idProduto) {
 
   const { imagem, nome, preco, id } = produto;
   const cartaoProdutoCarrinho = `
-  <button id="fechar-carrinho" class="absolute top-0 right-2">
+  <button id="remover-item-${id}" class="absolute top-0 right-2">
     <i class="fa-solid fa-circle-xmark text-slate-500 hover:text-slate-800"></i>
   </button>
   <img
@@ -89,6 +90,18 @@ function desenharProdutoNoCarrinho(idProduto) {
   document
     .getElementById(`incrementar-produto-${id}`)
     .addEventListener("click", () => incrementarQuantidadeProduto(id));
+  document
+    .getElementById(`remover-item-${id}`)
+    .addEventListener("click", () => removerDoCarrinho(id));
+}
+
+function renderizarProdutosCarrinho() {
+  const containerProdutoCarrinho = document.getElementById("produtos-carrinho");
+  containerProdutoCarrinho.innerHTML = "";
+
+  for (const idProduto in idsProdutoCarrinhoComQuantidade) {
+    desenharProdutoNoCarrinho(idProduto);
+  }
 }
 
 export function adicionarAoCarrinho(idProduto) {
