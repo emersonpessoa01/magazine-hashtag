@@ -1,6 +1,6 @@
-import { catalogo } from "./utilidades";
+import { catalogo, lerLocalStorage, salvarLocalStorage } from "./utilidades";
 
-const idsProdutoCarrinhoComQuantidade = {};
+const idsProdutoCarrinhoComQuantidade = lerLocalStorage("carrinho") ?? {};
 
 function abrirCarrinho() {
   document.getElementById("carrinho").classList.add("right-[0px]");
@@ -22,12 +22,14 @@ export function inicializarCarrinho() {
 
 function removerDoCarrinho(idProduto) {
   delete idsProdutoCarrinhoComQuantidade[idProduto];
+  salvarLocalStorage("carrinho", idsProdutoCarrinhoComQuantidade);
   atualizarPrecoCarrinho();
   renderizarProdutosCarrinho();
 }
 
 function incrementarQuantidadeProduto(idProduto) {
   idsProdutoCarrinhoComQuantidade[idProduto]++;
+  salvarLocalStorage("carrinho", idsProdutoCarrinhoComQuantidade);
   atualizarPrecoCarrinho();
   atualizarInformacaoQuantidade(idProduto);
 }
@@ -38,6 +40,7 @@ function decrementarQuantidadeProduto(idProduto) {
     return;
   }
   idsProdutoCarrinhoComQuantidade[idProduto]--;
+  salvarLocalStorage("carrinho", idsProdutoCarrinhoComQuantidade);
   atualizarPrecoCarrinho();
   atualizarInformacaoQuantidade(idProduto);
 }
@@ -100,7 +103,7 @@ function desenharProdutoNoCarrinho(idProduto) {
     .addEventListener("click", () => removerDoCarrinho(produto.id));
 }
 
-function renderizarProdutosCarrinho() {
+export function renderizarProdutosCarrinho() {
   const containerProdutoCarrinho = document.getElementById("produtos-carrinho");
   containerProdutoCarrinho.innerHTML = "";
 
@@ -115,11 +118,12 @@ export function adicionarAoCarrinho(idProduto) {
     return; /* sai da condição e não executa proxima função(não adiciona o mesmo produto) */
   }
   idsProdutoCarrinhoComQuantidade[idProduto] = 1;
+  salvarLocalStorage("carrinho", idsProdutoCarrinhoComQuantidade);
   desenharProdutoNoCarrinho(idProduto);
   atualizarPrecoCarrinho();
 }
 
-function atualizarPrecoCarrinho() {
+export function atualizarPrecoCarrinho() {
   const precoCarrinho = document.getElementById("preco-total");
 
   let precoTotalCarrinho = 0;
@@ -130,4 +134,3 @@ function atualizarPrecoCarrinho() {
   }
   precoCarrinho.innerText = `Total: $${precoTotalCarrinho}`;
 }
-atualizarPrecoCarrinho();
