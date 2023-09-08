@@ -22,28 +22,28 @@ export function inicializarCarrinho() {
 
 function removerDoCarrinho(idProduto) {
   delete idsProdutoCarrinhoComQuantidade[idProduto];
-  atualizarPrecoCarrinho()
+  atualizarPrecoCarrinho();
   renderizarProdutosCarrinho();
 }
 
 function incrementarQuantidadeProduto(idProduto) {
   idsProdutoCarrinhoComQuantidade[idProduto]++;
-  atualizarPrecoCarrinho()
+  atualizarPrecoCarrinho();
   atualizarInformacaoQuantidade(idProduto);
 }
+
 function decrementarQuantidadeProduto(idProduto) {
   if (idsProdutoCarrinhoComQuantidade[idProduto] === 1) {
     removerDoCarrinho(idProduto);
     return;
   }
   idsProdutoCarrinhoComQuantidade[idProduto]--;
-  atualizarPrecoCarrinho()
+  atualizarPrecoCarrinho();
   atualizarInformacaoQuantidade(idProduto);
 }
 function atualizarInformacaoQuantidade(idProduto) {
   document.getElementById(`quantidade-${idProduto}`).innerText =
     idsProdutoCarrinhoComQuantidade[idProduto];
-    
 }
 function desenharProdutoNoCarrinho(idProduto) {
   const produto = catalogo.find((p) => p.id === idProduto);
@@ -106,7 +106,6 @@ function renderizarProdutosCarrinho() {
 
   for (const idProduto in idsProdutoCarrinhoComQuantidade) {
     desenharProdutoNoCarrinho(idProduto);
-    
   }
 }
 
@@ -117,17 +116,18 @@ export function adicionarAoCarrinho(idProduto) {
   }
   idsProdutoCarrinhoComQuantidade[idProduto] = 1;
   desenharProdutoNoCarrinho(idProduto);
+  atualizarPrecoCarrinho();
 }
 
 function atualizarPrecoCarrinho() {
   const precoCarrinho = document.getElementById("preco-total");
-  console.log(precoCarrinho)
 
   let precoTotalCarrinho = 0;
   for (const idProdutoNoCarrinho in idsProdutoCarrinhoComQuantidade) {
-    precoTotalCarrinho += catalogo.find((p) => p.id === idProdutoNoCarrinho).preco * idsProdutoCarrinhoComQuantidade[idProdutoNoCarrinho];
-    
+    precoTotalCarrinho +=
+      catalogo.find((p) => p.id === idProdutoNoCarrinho).preco *
+      idsProdutoCarrinhoComQuantidade[idProdutoNoCarrinho];
   }
-  precoCarrinho.innerText = `Total: $${precoTotalCarrinho}`
+  precoCarrinho.innerText = `Total: $${precoTotalCarrinho}`;
 }
-atualizarPrecoCarrinho()
+atualizarPrecoCarrinho();
