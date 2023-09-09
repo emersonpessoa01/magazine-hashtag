@@ -132,5 +132,5 @@ export function atualizarPrecoCarrinho() {
       catalogo.find((p) => p.id === idProdutoNoCarrinho).preco *
       idsProdutoCarrinhoComQuantidade[idProdutoNoCarrinho];
   }
-  precoCarrinho.innerText = `Total: $${precoTotalCarrinho}`;
+  precoCarrinho.innerText = `Total: R$ ${(precoTotalCarrinho).toFixed(2).replace(".",",")}`;
 }

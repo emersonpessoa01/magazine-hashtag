@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Magazine Hashtag</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="reset.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -25,10 +25,15 @@
           <i class="fa-solid fa-circle-xmark"></i>
         </button>
       </div>
-      <div id="produtos-carrinho" class="h-3/5 overflow-y-auto flex flex-col gap-2">
+      <div
+        id="produtos-carrinho"
+        class="h-3/5 overflow-y-auto flex flex-col gap-2"
+      >
         <!-- aqui será inserido carrinho de forma dinâmica -->
       </div>
-      <p class="bg-slate-200 text-green-800 p-1 rounded-sm" id="preco-total">Total: $200</p>
+      <p class="bg-slate-200 text-green-800 p-1 rounded-sm" id="preco-total">
+        Total: R$200
+      </p>
       <button class="bg-slate-200 text-slate-900 p-1">Finalizar Compra</button>
     </section>
     <header
@@ -46,15 +51,28 @@
         </div>
       </div>
     </header>
-    <main>
-      <section id="filtros">
+    <main class="flex flex-col items-center">
+      <section class="pt-10 flex" id="filtros">
         <!-- filtro por categoria e preço-->
-        <input type="radio" />
+        <div class="px-2">
+          <input id="exibir-todos" type="radio" class="peer hidden" />
+          <label for="exibir-todos">Todos</label>
+        </div>
+        <div class="px-2">
+          <input id="exibir-masculino" type="radio" class="peer hidden" />
+          <label for="exibir-masculino">Masculinos</label>
+        </div>
+        <div class="px-2">
+          <input id="exibir-feminino" type="radio" class="peer hidden" />
+          <label for="exibir-feminino">Femininos</label>
+        </div>
       </section>
       <section
         id="container-produto"
         class="flex flex-wrap justify-center p-10 gap-10 font-['Roboto']"
-      ><!-- aqui é inserido os cards de forma dinâmica --></section>
+      >
+        <!-- aqui é inserido os cards de forma dinâmica -->
+      </section>
     </main>
 
     <script type="module" src="main.js"></script>
