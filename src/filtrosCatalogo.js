@@ -1,5 +1,5 @@
 const catalagoProdutos = document.getElementById("container-produto");
-// console.log(catalagoProdutos)
+console.log(catalagoProdutos);
 
 function exibirTodos() {
   const produtosEscondidos = Array.from(
