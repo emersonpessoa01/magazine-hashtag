@@ -21,7 +21,6 @@ export function renderizarCatalogo() {
       }" class="bg-slate-950 hover:bg-slate-700 duration-500 text-slate-200"><i class="fa-solid fa-cart-plus"></i></button>
     </divc> `;
     document.querySelector("#container-produto").innerHTML += cartaoProduto;
-    document.getElementById(`adicionar-${produtoCatalago.id}`);
   }
   for (const produtoCatalago of catalogo) {
     document

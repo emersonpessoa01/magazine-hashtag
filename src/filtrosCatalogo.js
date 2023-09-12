@@ -9,6 +9,7 @@ function exibirTodos() {
   for (const produto of produtosEscondidos) {
     produto.classList.remove("hidden");
   }
+  // produtosEscondidos.forEach((produto) => produto.classList.remove("hidden"));
 }
 
 function esconderMasculinos() {
