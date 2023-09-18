@@ -60,3 +60,6 @@
     background: #696d78;
     cursor:pointer;
   }
+  #dados-pagamento, #pagamento-entrega, #dados-pagamento{
+    /* flex: 1 1 220px; */
+  }
