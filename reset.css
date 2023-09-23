@@ -63,3 +63,9 @@
   #dados-pagamento, #pagamento-entrega, #dados-pagamento{
     /* flex: 1 1 220px; */
   }
+  @media(max-width:810px){
+    #celula-checkout{
+      gap:12px;
+      padding-bottom:1.25rem;
+    }
+  }
