@@ -12,13 +12,24 @@ function fecharCarrinho() {
     .classList.remove("right-[0px]"); /*desaparecer  */
   document.getElementById("carrinho").classList.add("right-[-360px]");
 }
+/* CHECKOUT */
+export function irParaCheckout() {
+  if (Object.keys(idsProdutoCarrinhoComQuantidade).length === 0) {
+    return;
+  }
+  window.location.href = `${window.location.origin}/checkout.html`;
+} 
+
+/* INICIALIZAR CARRINHO */
 export function inicializarCarrinho() {
   const botaoFecharCarrinho = document.getElementById("fechar-carrinho");
   const botaoAbrirCarrinho = document.querySelector(".fa-cart-shopping");
-  console.log(botaoAbrirCarrinho)
+  console.log(botaoAbrirCarrinho);
+  const botaoIrParaCheckout = document.getElementById("finalizar-compra")
 
   botaoFecharCarrinho.addEventListener("click", fecharCarrinho);
   botaoAbrirCarrinho.addEventListener("click", abrirCarrinho);
+  botaoIrParaCheckout.addEventListener("click", irParaCheckout);
 }
 
 function removerDoCarrinho(idProduto) {
@@ -136,7 +147,7 @@ export function atualizarPrecoCarrinho() {
     precoTotalCarrinho +=
       catalogo.find((p) => p.id === idProdutoNoCarrinho).preco *
       idsProdutoCarrinhoComQuantidade[idProdutoNoCarrinho];
-    }
+  }
   precoCarrinho.innerText = `Total: R$ ${precoTotalCarrinho
     .toFixed(2)
     .replace(".", ",")}`;
