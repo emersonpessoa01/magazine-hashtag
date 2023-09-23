@@ -84,10 +84,12 @@ export function desenharProdutoCarrinhoSimples(
   const elementoArticle = document.createElement("article"); //<article></article> Ficou no lugar da div
   const articleClasses = [
     "flex",
-    "bg-slate-100",
+    "bg-stone-50",
     "rounded-lg",
     "p-1",
     "relative",
+    "mb-2",
+    "border"
   ];
   for (const articleClass of articleClasses) {
     elementoArticle.classList.add(articleClass);
@@ -118,13 +120,5 @@ export function desenharProdutoCarrinhoSimples(
   elementoArticle.innerHTML = cartaoProdutoCarrinho;
   containerProdutoCarrinho.appendChild(elementoArticle);
 
-  document
-    .getElementById(`decrementar-produto-${produto.id}`)
-    .addEventListener("click", () => decrementarQuantidadeProduto(produto.id));
-  document
-    .getElementById(`incrementar-produto-${produto.id}`)
-    .addEventListener("click", () => incrementarQuantidadeProduto(produto.id));
-  document
-    .getElementById(`remover-item-${produto.id}`)
-    .addEventListener("click", () => removerDoCarrinho(produto.id));
+  
 }

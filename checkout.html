@@ -35,7 +35,8 @@
           <input
             type="text"
             id="nome"
-            class="rounded-sm px-2 border-2 border-slate-200 py-1"
+            class="rounded-sm px-2 border-2 border-slate-200 text-blue-800
+            focus:invalid:border-blue-700 focus:invalid:ring-blue-700 py-1"
             placeholder="Emerson Pessoa"
             required
           />
@@ -45,7 +46,8 @@
           <input
             type="email"
             id="email"
-            class="rounded-sm px-2 border-2 border-slate-200 py-1"
+            class="rounded-sm px-2 border-2 border-slate-200 text-blue-800
+            focus:invalid:border-blue-700 focus:invalid:ring-blue-700 py-1"
             placeholder="emson@gmail.com"
             required
           />
@@ -55,7 +57,8 @@
           <input
             type="tel"
             id="tel"
-            class="rounded-sm px-2 border-2 border-slate-200 py-1"
+            class="rounded-sm px-2 border-2 border-slate-200 text-blue-800
+            focus:invalid:border-blue-700 focus:invalid:ring-blue-700 py-1"
             placeholder="(99)9 9999-9999"
             required
           />
@@ -74,7 +77,8 @@
           <input
             type="text"
             id="numero-cartao"
-            class="rounded-sm px-2 border-2 border-slate-200 py-1"
+            class="rounded-sm px-2 border-2 border-slate-200 text-blue-800
+            focus:invalid:border-blue-700 focus:invalid:ring-blue-700 py-1"
             placeholder="1111 1111 1111 1111"
             required
           />
@@ -87,7 +91,8 @@
             <input
               type="text"
               id="cvv"
-              class="rounded-sm px-2 border-2 border-slate-200 py-1"
+              class="rounded-sm px-2 border-2 border-slate-200 text-blue-800
+              focus:invalid:border-blue-700 focus:invalid:ring-blue-700 py-1"
               placeholder="222"
               required
             />
@@ -100,7 +105,8 @@
             <input
               type="text"
               id="data-expiracao"
-              class="rounded-sm px-2 border-2 border-slate-200 py-1"
+              class="rounded-sm px-2 border-2 border-slate-200 text-blue-800
+            focus:invalid:border-blue-700 focus:invalid:ring-blue-700 py-1"
               placeholder="10/24"
               required
             />
@@ -112,7 +118,8 @@
           <input
             type="text"
             id="cep"
-            class="rounded-sm px-2 border-2 border-slate-200 py-1"
+            class="rounded-sm px-2 border-2 border-slate-200 text-blue-800
+            focus:invalid:border-blue-700 focus:invalid:ring-blue-700 py-1"
             placeholder="99.999-99"
             required
           />
@@ -123,7 +130,8 @@
           <input
             type="text"
             id="endereco"
-            class="rounded-sm px-2 border-2 border-slate-200 py-1"
+            class="rounded-sm px-2 border-2 border-slate-200 text-blue-800
+            focus:invalid:border-blue-700 focus:invalid:ring-blue-700 py-1"
             placeholder="Rua da Felicidade"
             required
           />
@@ -137,7 +145,8 @@
             <input
               type="text"
               id="numero"
-              class="rounded-sm px-2 border-2 border-slate-200 py-1"
+              class="rounded-sm px-2 border-2 border-slate-200 text-blue-800
+            focus:invalid:border-blue-700 focus:invalid:ring-blue-700 py-1"
               placeholder="444"
               required
             />
@@ -150,7 +159,8 @@
             <input
               type="text"
               id="complemento"
-              class="rounded-sm px-2 border-2 border-slate-200 py-1"
+              class="rounded-sm px-2 border-2 border-slate-200 text-blue-800
+            focus:invalid:border-blue-700 focus:invalid:ring-blue-700 py-1"
               placeholder="Detalhe/Referência"
               required
             />
@@ -161,8 +171,13 @@
         id="produtos-checkout"
         class="w-1/3 bg-white rounded-lg py-5 wrap grow shrink basis-60 justify-self-start"
       >
-        <section id="container-produtos-checkout" class="h-3/4 overflow-y-auto"></section>
-        <section id="celula-checkout"></section>
+        <section id="container-produtos-checkout" class="h-4/5 overflow-y-auto px-2"><!-- conteúdo produtos --></section>
+        <section id="celula-checkout" class="flex flex-col px-2 h-1/5 justify-around">
+          <p class="bg-slate-200 text-green-800 p-2 rounded" id="preco-total">
+            Total: R$200
+          </p>
+          <button class="bg-slate-900 text-slate-200 p-2 hover:bg-slate-700 duration:500 rounded">Finalizar Compra</button>
+        </section>
       </section>
     </form>
     <script type="module" src="checkout.js"></script>
