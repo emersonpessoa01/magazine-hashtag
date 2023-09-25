@@ -19,7 +19,7 @@ function desenharProdutosCheckout() {
 desenharProdutosCheckout();
 
 /* FINALIZAR COMPRA */
-function finalizarCompra(evento) {
+export function finalizarCompra(evento) {
   evento.preventDefault();
   const idsProdutoCarrinhoComQuantidade = lerLocalStorage("carrinho") ?? {};
 

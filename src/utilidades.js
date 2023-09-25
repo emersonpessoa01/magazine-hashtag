@@ -74,7 +74,7 @@ export function apagarDoLocalStorage(chave){
   localStorage.removeItem(chave)
 
 }
-/* DESENHAR */
+/* DESENHAR CHECKOUT */
 export function desenharProdutoCarrinhoSimples(
   idProduto,
   idContainerHtml,
