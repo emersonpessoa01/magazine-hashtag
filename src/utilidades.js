@@ -123,5 +123,7 @@ export function desenharProdutoCarrinhoSimples(
   elementoArticle.innerHTML = cartaoProdutoCarrinho;
   containerProdutoCarrinho.appendChild(elementoArticle);
 
+  console.log(produto.imagem)
+
   
 }
