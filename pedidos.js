@@ -12,7 +12,7 @@ function criarPedidoHistorico(pedidoComData) {
   })}</p>
   <section id="container-pedidos-${
     pedidoComData.dataPedido
-  }" class="bg-slate-300 p-3 rounded-md"></section>
+  }" class="bg-slate-300 p-3 rounded-md max-w-full mb-4"></section>
   `;
 
   const main = document.getElementsByTagName("main")[0];

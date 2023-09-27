@@ -93,7 +93,6 @@ export function desenharProdutoCarrinhoSimples(
     "relative",
     "mb-2",
     "border",
-    "w-96"
   ];
   for (const articleClass of articleClasses) {
     elementoArticle.classList.add(articleClass);

@@ -73,6 +73,7 @@ function desenharProdutoNoCarrinho(idProduto) {
     "rounded-lg",
     "p-1",
     "relative",
+    
   ];
   for (const articleClass of articleClasses) {
     elementoArticle.classList.add(articleClass);
