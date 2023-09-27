@@ -8,7 +8,7 @@ export function renderizarCatalogo() {
     }" id="card-produto-${produtoCatalago.id ? "feminino" : "masculino"}">
     <div class="h-full h-full overflow-hidden rounded-lg">
       <img
-        src="../dist/assets/img/${produtoCatalago.imagem}"
+        src="./assets/img/${produtoCatalago.imagem}"
         alt="Produto 1 do magazine Hashtag"
         class="group-hover:scale-110 duration-500 origin-top-left w-full h-full object-cover cursor-pointer"
       />

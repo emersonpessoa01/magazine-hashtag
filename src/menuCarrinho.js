@@ -86,7 +86,7 @@ function desenharProdutoNoCarrinho(idProduto) {
     <i class="fa-solid fa-circle-xmark text-slate-500 hover:text-slate-800"></i>
   </button>
   <img
-    src="../dist/assets/img/${produto.imagem}"
+    src="./assets/img/${produto.imagem}"
     alt="Carrinho: ${produto.nome}"
     title="Carrinho: Camisa Larga com Bolsos"
     class="h-24 rounded-lg"
