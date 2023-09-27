@@ -1,10 +1,7 @@
-import { defineConfig } from "vite";
-// import react from "@vitejs/plugin-react";
-
 // import vueJsxPlugin from "@vitejs/plugin-vue-jsx"
+// import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
 export default defineConfig({
-  plugins: [react()],
+  // plugins: [react()],
   base: "/magazine-hashtag",
 });
